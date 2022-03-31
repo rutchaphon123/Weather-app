@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 150px;
+            align-items: center;
+            line-height: 40px;
+            background-color: #F24A72;
+            color: #F7F5F2;
+            }
+    </style>
+    <title>Forcast</title>
+</head>
+<body>
+    <div class="container">
+        <h2><%= forcastObj.name %></h2>
+        <button onclick="goHome()" type="button">back</button>
+    
+    <div class="body-card">
+        <img src="http://openweathermap.org/img/w/<%= forcastObj.weather[0].icon %>.png" alt="icon" width="100px" height="60px"/>
+
+        <p>สภาพอากาศ <%= forcastObj.weather[0].discription%></p>
+        <p>อุณหภูมิ <%= forcastObj.main.temp%> kelvin </p>
+        <p>เปอร์เซ็นต์ <%= forcastObj.main.humidity%> %</p>
+    </div>
+</div>
+    <script>
+        function goHome() {
+            window.location.href ="/";
+        }
+    </script>
+</body>
+</html>

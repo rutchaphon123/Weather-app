@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Prakhon Chai",
+        "coord": {
+            "lon": 103.120811,
+            "lat": 14.60592
+        },
+        "country": "TH"
+    },
+    {
+        "id": 2,
+        "name": "Changwat Lop Buri",
+        "coord": {
+            "lon": 100.75,
+            "lat": 14.93333
+        },
+        "country": "TH"
+    },
+    {
+        "id": 3,
+        "name": "Chiang Mai",
+        "coord": {
+            "lon": 98.979263,
+            "lat": 18.796143
+        },
+        "country": "TH"
+    }
+]

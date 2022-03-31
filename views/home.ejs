@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 150px;
+            align-items: center;
+            line-height: 40px;
+            padding: 50px;
+            background-color: #F24A72;
+            color: #F7F5F2;
+            }
+    </style>
+    <title>weather app</title>
+</head>
+<body>
+    <div class="container">
+    <h1>พยากรณ์อากาศ</h1>
+    <div>
+    <button type="button" onclick="city_form()">จากชื่อจังหวัดหรืออำเภอ</button>
+    </div>
+    <div>
+    <button type="button" onclick="location_form()">จากพิกัดเส้นรุ้งเส้นแวง</button>
+    </div>
+    <div id="city" style="display: none;">
+        <form action="api/city" id="form_city">
+            <label for="city">จังหวัดหรืออำเภอของประเทศไทย</label>
+            <select name="city">
+                <option value="">เลือก</option>
+                <% lists.forEach(function(list) { %>
+                    <option value="<%= list.name %>"><%=
+                    list.name %></option>
+               <% }) %>
+            </select>
+            <button type="submit" >พยากรณ์</button>
+        </form>
+    </div>
+    <div id="location" style="display: none;">
+        <form action="api/coordinate" id="form_location">
+            <label for="lon">เส้นแวง (longitude)</label>
+            <input name="lon" type="number" step="0.0001" id="lon" placeholder="0.0000">
+            <label for="lat">เส้นรุ้ง (latitude</label>
+            <input name="lat" type="number" step="0.0001" id="lon" placeholder="0.0000">
+            <button type="submit" >พยากรณ์</button>
+        </form>
+    </div>
+</div>
+    <script>
+        function city_form() {
+            document.getElementById('city').style.display = "block";
+            document.getElementById('location').style.display = "none";
+        }
+        function location_form() {
+            document.getElementById('city').style.display = "none";
+            document.getElementById('location').style.display = "block";
+        }
+    </script>
+</body>
+</html>
